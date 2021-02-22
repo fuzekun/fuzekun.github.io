@@ -172,7 +172,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="hexo搭建"><a href="#hexo搭建" class="headerlink" title="hexo搭建"></a>hexo搭建</h1><ul>
+        <ul>
+<li><h1 id="hexo搭建"><a href="#hexo搭建" class="headerlink" title="hexo搭建"></a>hexo搭建</h1><ul>
 <li><p>安装node.js</p>
 </li>
 <li><p>安装镜像 <code>npm install -g cnpm --registry=http://registry.npm.taobao.org</code></p>
@@ -187,9 +188,47 @@
 <li><p>启动博客 <code>hexo start</code>在本地的4000端口启动</p>
 </li>
 </ul>
-<h1 id="hexo博客使用"><a href="#hexo博客使用" class="headerlink" title="hexo博客使用"></a>hexo博客使用</h1><ul>
+<h1 id="hexo博客使用"><a href="#hexo博客使用" class="headerlink" title="hexo博客使用"></a>hexo博客使用</h1><blockquote>
+<p>创建博文并发布</p>
+</blockquote>
+<ul>
 <li><code>hexo n &quot;我的第一篇博客文章&quot;</code> 进行创建新文章</li>
 <li>进入source/_posts文件夹下进行查看修改即可。</li>
+<li>hexo clean</li>
+<li>hexo g</li>
+</ul>
+<h1 id="hexo-部署在github"><a href="#hexo-部署在github" class="headerlink" title="hexo 部署在github"></a>hexo 部署在github</h1><ul>
+<li><p>创建一个新的repository 名称为自己的gitHub名称.github.io</p>
+</li>
+<li><p>在blog目录安装<code>cnpm install --save hexo-deployer-git</code></p>
+</li>
+<li><p>打开_config.yml文件，在尾部修改</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">你git仓库的网址</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>hexo d</p>
+</li>
+<li><p>输入github的邮箱和密码</p>
+<blockquote>
+<p>这样git上面就有你的博客了，就不用在4000本地端口访问了。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="hexo-更换主题"><a href="#hexo-更换主题" class="headerlink" title="hexo 更换主题"></a>hexo 更换主题</h1><ul>
+<li><p>下载主题 <code>https://github.com/litten/hexo-theme-yilia</code></p>
+<blockquote>
+<p>如果使用clone慢的可以下载压缩包自己解压到themes主题中<br><img src="https://img-blog.csdnimg.cn/20210222222109455.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Z1emVrdW4=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>注意一定要把yilia的第一层目录中放文件，像这种<br><img src="https://img-blog.csdnimg.cn/20210222222223758.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Z1emVrdW4=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+</blockquote>
+</li>
+<li><p>修改config.yml文件，将themes改成yilia</p>
+</li>
+<li><p>hexo clean</p>
+</li>
+<li><p>hexo g</p>
+</li>
+<li><p>hexo d</p>
+</li>
 </ul>
 
       
