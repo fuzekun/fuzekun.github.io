@@ -218,12 +218,21 @@
 
 
 
-
-
+<p>3/2</p>
 <blockquote>
-<p>题目二</p>
+<p>题目一：签到题目 二维数组中任意矩形的和问题，使用前缀和进行求解。</p>
+<p>时间复杂度O(MN)，空间复杂度O（MN）</p>
+<p>使用数形结合的思想，以及部分dp的思想。</p>
+<p>sum(i, j) ：表示以(i, j)为结尾，以（0，0）为终点的矩形的和。</p>
+<p>于是sum(i, j) = sum(i - 1, j) + sum(i, j - 1) + matrix(i, j) - sum(i - 1, j  - 1);</p>
+<p>表示为图形为： (x + y) + (x + z) + t - x = x + y + z + t</p>
+<p>如果求sum(row1, col1, row2, col2) = sum(row2, col2) - sum(row2, col1 - 1,)  -</p>
+<p>sum(row1 - 1,  col2) + sum(i -  1, j  - 1) </p>
+<p>如图为 : (ans + x + y + z) - (y + x)  - (y  + z)  + y = ans;</p>
 </blockquote>
-
+<p><img src="G:\images\image-20210302191059955.png" alt="image-20210302191059955"></p>
+<p><img src="G:\images\image-20210302190308382.png" alt="image-20210302190308382"></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">知识点:</span><br><span class="line">易错点: </span><br><span class="line"> - <span class="number">1.</span>数组越界问题，一旦有加减，就可能会出现数组越界，可以再容易越界的地方输出</span><br><span class="line"> - <span class="number">2.</span>逻辑是代码的灵魂，逻辑一定要足够清晰。</span><br><span class="line"> </span><br></pre></td></tr></table></figure>
       
 
       
